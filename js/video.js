@@ -22,12 +22,14 @@ document.querySelector("#play").addEventListener("click", function() {
 
 // Updating the volume information
 
-document.querySelector("#slider").addEventListener("dragstart", function(){
+document.querySelector("#slider").addEventListener("input", function(){
 	console.log("volume has been changed");
+	video = document.querySelector("#player1");
 	volume = document.querySelector("#slider").value;
-	document.querySelector("#volume").innerHTML = "Volume: " + volume;
-	document.querySelector("#slider").innerHTML.value = volume;
-
+	document.querySelector("#volume").innerHTML = volume;
+	video.volume = volume/100;	
+			
+});
 	
 
 		
@@ -133,10 +135,22 @@ document.querySelector("#skip").addEventListener("click", function(){
 		video.currentTime = 0;
 	}
 
-})
+});
 
+// Apply existing Old School class on the video;
+document.querySelector("#vintage").addEventListener("click", function(){
+	console.log("Old School button has been clicked");
+	video = document.querySelector("#player1");
+	video.classList.add("oldSchool");
 
+});
 
+// Get rid of Old School class
+document.querySelector("#orig").addEventListener("click", function(){
+	console.log("Original button clicked");
+	video = document.querySelector("#player1");
+	video.classList.remove("oldSchool");
+});
 
 
 
