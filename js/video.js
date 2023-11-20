@@ -17,6 +17,9 @@ document.querySelector("#play").addEventListener("click", function() {
 	console.log("button has been clicked");
 	video = document.querySelector("#player1");
 	video.play();
+	volume = document.querySelector("#slider").value;
+	document.querySelector("#volume").innerHTML = volume
+	video.volume = volume/100;
 	console.log("video is playing")
 });
 
