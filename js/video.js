@@ -35,9 +35,6 @@ document.querySelector("#slider").addEventListener("input", function(){
 });
 	
 
-		
-});
-
 
 // To pause video
 
